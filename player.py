@@ -55,7 +55,6 @@ class Player(CircleShape):
     
     
     def shoot(self):
-        x, y = self.position
-        gun = Bullet(x, y, SHOT_RADIUS)
+        gun = Bullet(self.position.x, self.position.y, SHOT_RADIUS)
         gun.velocity = gun.velocity.rotate(self.rotation) * PLAYER_SHOOT_SPEED
         self.cooldown = PLAYER_SHOOT_COOLDOWN
